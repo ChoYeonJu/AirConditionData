@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Air Quality Map</title>
+	
+	<link href="../../css/air.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css"/>
+	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"> </script>
+	<!-- <script type="text/javascript" src="../js/air.js"></script> -->
+	<script type="text/javascript" src="../js/heatmap.js"></script>
+	<script type="text/javascript" src="../js/canvas.js"></script>
+	<script type="text/javascript" src="../vue/vue.js"></script>
+	<script type="text/javascript" src="../js/map.js">
+
+		
+	</script>
+	
+</head>
+
+ <body>
+    <div id="header">
+      <div class="menuBtn"><p>CLICK</p></div>
+      <div class="title">Air Quality Map</div>
+    </div>
+ 
+    <div id="mainWrap">
+      <div class="mapSection">
+        <div id="map" class="map"></div>
+      </div>
+
+      <div class="rightSidBar">
+        <div class="chart_legend">
+			<canvas id="canvas1"></canvas>
+			<div class="chart_text">
+				<div class="time"></div>
+				<div>미세먼지 좋음</div>
+			</div>
+        </div>
+        <div class="Graph">
+          <canvas id="canvas2"></canvas>
+        </div>
+
+        <div class="control">
+
+          <div class="map_selection">
+           <p> 지도 변경 </p>
+              <ul>
+                <li><input type="radio" name="osm" id="osm" checked><span>OSM</span></li>
+                <li><input type="radio" name="stamen" id="stamen"><span>STAMEN</span></li>
+                <li><input type="radio" name="arc" id="arc"><span>ARCGIS</span></li>
+                <li><input type="radio" name="vworld" id="vworld"><span>VWORLD</span></li>                
+              </ul>
+          </div>
+          <div class="data_selection">
+            <p> 농도 기준 </p>
+            <ul>
+              <li><input type="checkbox" class="good"><img src="../img/verygood.png"><span>좋음 (0 ~ 15)</span></li>
+              <li><input type="checkbox" class="notbad"><img src="../img/good.png"><span>보통 (16 ~ 35)</span></li>
+              <li><input type="checkbox" class="bad"><img src="../img/bad.png"><span>나쁨 (36 ~ 75)</span></li>
+              <li><input type="checkbox" class="badly"><img src="../img/verybad.png"><span>매우나쁨 (76 ~)</span></li>
+              <li><input type="checkbox" class="noData"><img src="../img/deadly.png"><span>데이터 없음</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="menubar">
+      <ul>
+        <li>AQI</li>
+        <li><input type="button" value="미세먼지" class="pm10"></li>
+        <li><input type="button" value="초미세먼지" class="pm2_5"></li>
+        <li><input type="button" value="오존" class="o3"></li>
+        <li><input type="button" value="이산화질소" class="no2"></li>
+        <li><input type="button" value="일산화탄소" class="co"></li>
+        <li><input type="button" value="아황산가스" class="so2"></li>
+      </ul>
+    </div>
+    <footer></footer>
+  </body>
+</html>
+
+
+
+<!-- <body>
+	<div id="app">
+		{{message}}
+	</div>
+	<div id="map" class="map">
+	</div>
+
+
+	<script type="text/javascript" src="./vue/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				message: 'hello vue js'
+			}
+		})
+	</script>
+</body> -->

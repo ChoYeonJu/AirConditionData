@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="air.crawl.condition.mappers.AirMapper">
+	<select id="selectNow" resultType="string">
+		SELECT now()
+	</select>
+	
+	<select id="select" resultType="air.crawl.condition.dto.AirDto">
+		SELECT * FROM air_condition
+	</select>
+	
+	<update id="updateData" parameterType="air.crawl.condition.dto.ParameterDto">
+		UPDATE 
+			air_condition 
+		SET 
+			${columName} = #{value} 
+		WHERE 
+			located2 = #{guName}
+	</update>
+	<update id="updateTest">
+		UPDATE air_condition 
+		SET CO = 7 
+		WHERE st_code = '032'
+	</update>
+	
+	<select id="getColumnList" resultType="string">
+		SELECT 
+			column_name 
+		FROM 
+			information_schema.columns 
+		WHERE 
+			data_type = 'double precision' AND table_name = 'air_condition'; 
+	</select>
+</mapper>

@@ -1,0 +1,182 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+html{
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  padding: 0;
+  margin: 0;
+  height: 937px;
+  width: 1920px;
+  position: fixed;
+}
+#header{
+  width: 100%;
+  height: 5%;
+  text-align: center;
+  background-color: #41c8e2;
+}
+#header .menuBtn{
+  cursor: pointer;
+  float: left;
+  width: 10%;
+  height: 100%;
+}
+#header .menuBtn > p{
+  color: aliceblue;
+  padding-top: 12px;
+}
+
+#header .title{
+  cursor: default;
+  width: 90%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+}
+#mainWrap{
+  height: 100%;
+  width: 100%;
+}
+.mapSection{
+  float: left;
+  height: 100%;
+  width: 70%;
+  background-color: aliceblue;
+}
+#map {
+  margin: 0px auto;
+  height: 100%;
+  width: 100%;
+}
+/* .map {
+  margin: 0px auto;
+  height: 1000px;
+  width: 900px;
+} */
+
+footer{
+  height: 5%;
+  width: auto;
+}
+/* 매뉴바 */
+.menubar{
+  float: left;
+  left : -150px;
+  height: 100%;
+  width: 150px;
+  bottom: 937px;
+  background-color: #aaefef;
+  position: relative;
+}
+.menubar ul{
+  margin-bottom: 10px;
+  width: 100%;
+  height: 45px;
+  padding-top: 22px;
+  font-weight: bold;
+}
+.menubar ul > li:hover{
+  box-shadow: 1px 2px 14px #000808;
+}
+.menubar ul > li{
+  padding-top: 3px;
+  width: 100%;
+  height: 45px;
+}
+.menubar ul > li > input{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+.menubar ul > li:first-child:not(:hover){
+  text-align: center;
+}
+.rightSidBar{
+  float: left;
+  height: 100%;
+  width: 30%;
+  background-color: aliceblue;
+}
+.rightSidBar .chart_legend{
+  height: 30%;
+  text-align: center;
+}
+.rightSidBar .chart_legend #canvas1{
+  width: 90%;
+  height: 90%;
+  margin-top: 10px;
+  border: solid 1px rgb(216, 213, 213);
+  background-color: white;
+}
+.rightSidBar .chart_legend .chart_text{
+  position: relative;
+  width: 200px;
+  bottom: 180px;
+  margin: 0px 350px;
+}
+.rightSidBar .chart_legend .chart_text div{
+  padding: 5px 0px;
+}
+.rightSidBar .Graph{
+  height: 30%;
+  text-align: center;
+}
+.rightSidBar .Graph #canvas2{
+  width: 90%;
+  height: 90%;
+  margin-top: 10px;
+  border: solid 1px rgb(216, 213, 213);
+  background-color: white;
+}
+.rightSidBar .control{
+  height: 40%;
+}
+.rightSidBar .control p{
+  padding: 10px;
+  
+}
+.rightSidBar .control ul li{
+  padding: 10px;
+  padding-left: 20px;
+}
+.rightSidBar .control .map_selection{
+  height: 35%;
+  border: solid 1px rgb(216, 213, 213);
+}
+.rightSidBar .control .map_selection ul li:nth-child(2n-1){
+  float:left;
+}
+.rightSidBar .control .data_selection{
+  height: 53%;
+}
+.rightSidBar .control .data_selection img{
+  padding: 0px 8px;
+}
+.rightSidBar .control .data_selection ul li:nth-child(2n-1){
+  float:left;
+}
+/* 오른쪽 차트 바 및 컨트롤 바 */
+.map_selection p, .data_selection p{
+  font-weight: bolder;
+  font-size: 17px;
+}
+.map_selection p > img{
+  width: 25px;
+  height: 25px;
+}
+.map_selection span{
+  padding-left: 10px;
+}
+img{
+  width: 25px;
+  height: 25px;
+}
