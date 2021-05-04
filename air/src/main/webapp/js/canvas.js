@@ -7,7 +7,7 @@ function drawLengendChart(){
 	var y = 130;
 	var r = 80;
 
-	// 글자 채우기
+	/* 글자 채우기 */
 	context.font = '2px';
 	context.fillText('미세먼지 정보', 80,20);
 
@@ -72,18 +72,17 @@ function drawAverageGraph() {
 
 	// 글자 채우기
 	ctx.font = '2px';
+	ctx.fillText('기준:하루', 5,15);
 	ctx.fillText('최저', 80,145);
 	ctx.fillText('평균', 160, 145);
 	ctx.fillText('최고', 240, 145);
-
-
 }
 function drawAverageBar(){
   var bar = document.getElementById('canvas2').getContext('2d');
 
   // bar.beginPath();
   bar.fillStyle = "#74c2f5";
-  bar.fillRect(80, 130, 15, -80);
-  bar.fillRect(160, 130, 15, -50);
-  bar.fillRect(240, 130, 15, -30);
+  bar.fillRect(80, 130, 15, -30);
+  bar.fillRect(160, 130, 15, -45);
+  bar.fillRect(240, 130, 15, -50);
 }

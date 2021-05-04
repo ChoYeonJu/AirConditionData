@@ -80,8 +80,11 @@ footer{
   padding-top: 22px;
   font-weight: bold;
 }
-.menubar ul > li:hover{
+.menubar ul > li:hover :not(.hi){
   box-shadow: 1px 2px 14px #000808;
+}
+.menubar .hi{
+  text-align: center;
 }
 .menubar ul > li{
   padding-top: 3px;
@@ -96,9 +99,6 @@ footer{
   text-decoration: none;
   border: none;
   background-color: transparent;
-}
-.menubar ul > li:first-child:not(:hover){
-  text-align: center;
 }
 .rightSidBar{
   float: left;
@@ -179,4 +179,24 @@ footer{
 img{
   width: 25px;
   height: 25px;
+}
+/* 범례 차트 텍스트 */
+.chart_text .good, .chart_text .notbad, .chart_text .bad, .chart_text .badly{
+  position: relative;
+}
+.chart_text .badly{
+  left: -130px;
+  top: -50px;
+}
+.chart_text .bad{
+  left: -200px;
+  top: -85px;
+}
+.chart_text .notbad{
+  left: -300px;
+  top: -31px;
+}
+.chart_text .good{
+  left: -338px;
+  top: 42px;
 }

@@ -29,7 +29,5 @@ public class UpdateDataJob extends QuartzJobBean implements InterruptableJob{
 		// TODO Auto-generated method stub
 //		crawl.process();
 		log.info("안녕~~~~~~~~~~~~~~");
-	}
-
-	
+	}	
 }

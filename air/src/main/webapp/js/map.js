@@ -21,7 +21,9 @@ $(document).ready(function () {
 	map.addLayer(initVectorLayer());
 
 
-	$('.time').text(new Date().toLocaleString());
+	/* canvas 차트 부분 text */
+	$('.chart_text .time').text(new Date().toLocaleString());
+	$('.chart_text .airState').text('미세먼지 보통');
 
 	$('.menuBtn').click(function () {
 		if ($('.menubar').offset().left == -150) {
