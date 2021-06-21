@@ -25,6 +25,11 @@ public class InitController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/ppt", method = RequestMethod.GET)
+	public String ppt() {
+		return "ppt";
+	}
+	
 //	@RequestMapping(value = "/api", method = RequestMethod.POST)
 //	public String select() throws Exception{
 //		List<AirDto>  aa = airService.select();

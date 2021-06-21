@@ -16,7 +16,28 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
+	<!-- geotools 스냅샷 -->
+	<repositories>
+	  <repository>
+	    <id>osgeo</id>
+	    <name>OSGeo Release Repository</name>
+	    <url>https://repo.osgeo.org/repository/release/</url>
+	    <snapshots><enabled>false</enabled></snapshots>
+	    <releases><enabled>true</enabled></releases>
+	  </repository>
+	  <repository>
+	    <id>osgeo-snapshot</id>
+	    <name>OSGeo Snapshot Repository</name>
+	    <url>https://repo.osgeo.org/repository/snapshot/</url>
+	    <snapshots><enabled>true</enabled></snapshots>
+	    <releases><enabled>false</enabled></releases>
+	  </repository>
+	</repositories>
+
+	
 	<dependencies>
+		<!-- 초기 세팅 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -25,7 +46,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.3.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -37,10 +72,11 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+	    </dependency>
+		
+		<!-- 웹 스크롤링을 위한 jsoup, htmlunit, httpclient -->
 		<dependency>
 		    <groupId>org.jsoup</groupId>
 		    <artifactId>jsoup</artifactId>
@@ -57,29 +93,19 @@
 		    <version>2.46.0</version>
 		</dependency>
 		
+		<!-- 로그 설정 -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.12</version>
+		</dependency>
 		<dependency>
 		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
 		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 		    <version>1.16</version>
 		</dependency>
 		
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-jdbc</artifactId>
-		    <version>5.3.1</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.mybatis.spring.boot</groupId>
-		    <artifactId>mybatis-spring-boot-starter</artifactId>
-		    <version>2.1.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-		<dependency>
-		    <groupId>log4j</groupId>
-		    <artifactId>log4j</artifactId>
-		    <version>1.2.12</version>
-		</dependency>
+		<!-- 스케줄링을 위한 DEPENDENCY -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-quartz</artifactId>
@@ -95,11 +121,51 @@
 		    <version>2.4.2</version>
 		</dependency>
 		
-<!-- 		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-jasper</artifactId>
-	    </dependency> -->
-
+		<!-- PPT 생성을 위한 DEPENDENCY -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>4.1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml-schemas</artifactId>
+		    <version>4.1.2</version>
+		</dependency>
+		
+		<!-- geotools 관련 DEPENDENCY -->
+		<dependency>
+		    <groupId>org.geotools.jdbc</groupId>
+		    <artifactId>gt-jdbc-postgis</artifactId>
+		    <version>24.3</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.geotools.jdbc</groupId>
+		    <artifactId>gt-jdbc</artifactId>
+		    <version>24.3</version>
+		    <type>pom</type>
+		</dependency>
+		<dependency>
+		    <groupId>org.geotools</groupId>
+		    <artifactId>gt-shapefile</artifactId>
+		    <version>22-RC</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.geotools</groupId>
+		    <artifactId>gt-opengis</artifactId>
+		    <version>22-RC</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.locationtech.jts</groupId>
+		    <artifactId>jts-core</artifactId>
+		    <version>1.18.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -118,5 +184,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+
 
 </project>
